@@ -16,11 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    cd $(System.DefaultWorkingDirectory)/my-app
     npm install -g @angular/cli
     npm install
     ng build
   displayName: 'npm install and build'
-  cwd: $(System.DefaultWorkingDirectory)/my-app
 - task: AzureStaticWebApp@0
   inputs:
     workingDirectory: '$(System.DefaultWorkingDirectory)/my-app'
