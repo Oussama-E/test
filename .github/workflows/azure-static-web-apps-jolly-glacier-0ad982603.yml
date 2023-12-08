@@ -27,7 +27,7 @@ jobs:
         run: npm install
         working-directory: ./my-app  # Set the working directory to the location of package.json
       - name: Build
-        run: ng build 
+        run: npm run build 
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
