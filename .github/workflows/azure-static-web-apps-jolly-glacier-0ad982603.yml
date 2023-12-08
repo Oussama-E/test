@@ -25,6 +25,7 @@ jobs:
           node-version: '18.13'
       - name: Install dependencies
         run: npm install
+        working-directory: ./my-app  # Set the working directory to the location of package.json
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
