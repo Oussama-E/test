@@ -26,7 +26,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd my-app
+    cd $(System.DefaultWorkingDirectory)/my-app
     npm install -g @angular/cli
     npm install
     npm run build 
