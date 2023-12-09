@@ -28,7 +28,7 @@ steps:
 
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: '/my-app/dist/my-app/browser'
+    app_location: '/dist/my-app/'
     output_location: 'dist/my-app'
     deployment_environment: 'developpement'
   env:
