@@ -30,5 +30,5 @@ steps:
   inputs:
     app_location: '/my-app/dist/my-app/browser'
     output_location: 'dist/my-app'
-    azure_static_web_apps_api_token: ${token}
+    azure_static_web_apps_api_token: ${TOKEN}
     deployment_environment: 'developpement'
