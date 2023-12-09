@@ -19,7 +19,7 @@ steps:
     cd $(System.DefaultWorkingDirectory)/my-app
     npm install -g @angular/cli
     npm install
-    ng build
+    ng build --verbose
   displayName: 'npm install and build'
 - task: AzureStaticWebApp@0
   inputs:
