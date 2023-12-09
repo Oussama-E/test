@@ -23,7 +23,9 @@ steps:
     ls -al
     ng build
     echo "Directory contents after ng build:"
-    ls -al my-app
+    ls -al 
+    echo "ici"
+    ls -al dist/my-app/browser
   displayName: 'npm install and build'
   
 - task: AzureStaticWebApp@0
