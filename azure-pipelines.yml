@@ -32,6 +32,6 @@ steps:
     app_location: '/my-app/dist/my-app/browser'
     app_build_command: 'ng build'
     output_location: 'dist/my-app'
-    verbose: true'
+    verbose: true
   displayName: 'Deploy to Azure Static Web Apps'
 
