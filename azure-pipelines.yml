@@ -30,9 +30,9 @@ steps:
   inputs:
     workingDirectory: '$(System.DefaultWorkingDirectory)/my-app'
     app_location: '/my-app/dist/my-app/browser'
+    app_build_command: 'npm run build'
     output_location: 'dist/my-app'
-    skip_deploy_on_missing_secrets: true  # Utilisez ceci si vous voulez ignorer le déploiement en cas de secrets manquants
-    azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_GLACIER_0AD982603)
-    verbose: true
+    azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_GLACIER_0AD982603 }}
   displayName: 'Deploy to Azure Static Web Apps'
+
 
