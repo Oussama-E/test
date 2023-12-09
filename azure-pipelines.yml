@@ -25,4 +25,3 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/my-app'
     app_location: '/my-app/dist/my-app/browser'
     output_location: 'dist/my-app'
-displayName: 'npm install and build'
