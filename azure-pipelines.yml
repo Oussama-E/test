@@ -21,8 +21,4 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
-- task: AzureStaticWebApp@0
-  inputs:
-    workingDirectory: '$(System.DefaultWorkingDirectory)/my-app/dist/my-app'
-    app_location: '/my-app/dist/my-app/browser'
-    output_location: 'dist/my-app'
+
