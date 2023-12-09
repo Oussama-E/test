@@ -14,6 +14,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  AZURE_STATIC_WEB_APPS_API_TOKEN: "token_azure"
+  GITHUB_REPO_TOKEN: "token_github"
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -35,5 +39,7 @@ steps:
   inputs:
     app_location: '/my-app/dist/my-app/browser'
     output_location: 'dist/my-app'
-    azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_GLACIER_0AD982603 }}
+    azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN)
+    repo_token: $(GITHUB_REPO_TOKEN)
+    action: 'upload'
   displayName: 'Deploy to Azure Static Web Apps'
