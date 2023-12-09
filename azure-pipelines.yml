@@ -16,9 +16,13 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd my-app
+    cd $(System.DefaultWorkingDirectory)/my-app
     npm install -g @angular/cli
     npm install
+    echo "Current directory contents:"
+    ls -al
     npm run build
+    echo "Directory contents after ng build:"
+    ls -al
   displayName: 'npm install and build'
 
