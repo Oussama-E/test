@@ -1,4 +1,6 @@
 # Node.js with Angular
+- task: AzureStaticWebApp@0
+  inputs:
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -19,12 +21,17 @@ steps:
     cd $(System.DefaultWorkingDirectory)/my-app
     npm install -g @angular/cli
     npm install
-    ng build --verbose
+    echo "Current directory contents:"
+    ls -al
+    ng build
+    echo "Directory contents after ng build:"
+    ls -al
   displayName: 'npm install and build'
+
 - task: AzureStaticWebApp@0
   inputs:
-    workingDirectory: '$(System.DefaultWorkingDirectory)/my-app'
     app_location: '/my-app/dist/my-app/browser'
-    app_build_command: 'npm run build'
     output_location: 'dist/my-app'
-  displayName: 'npm install and build'
+  displayName: 'Deploy to Azure Static Web Apps'
+- task: AzureStaticWebApp@0
+  inputs:
