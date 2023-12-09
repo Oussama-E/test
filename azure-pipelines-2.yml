@@ -32,9 +32,9 @@ steps:
   displayName: 'npm install and build'
   
 - script: |
-  echo "Contenu du répertoire de travail :"
-  ls -R $(System.DefaultWorkingDirectory)
-displayName: 'Afficher le contenu du répertoire de travail'
+    echo "Contenu du répertoire de travail :"
+    ls -R $(System.DefaultWorkingDirectory)
+  displayName: 'Afficher le contenu du répertoire de travail'
   
 - task: AzureStaticWebApp@0
   inputs:
