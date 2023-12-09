@@ -28,7 +28,7 @@ steps:
   
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: 'dist/my-app'
+    app_location: 'dist/my-app/server'
     app_build_command: npm run build
     output_location: 'public'
     cwd: '$(System.DefaultWorkingDirectory)/my-app'
