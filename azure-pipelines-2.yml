@@ -29,6 +29,7 @@ steps:
 - task: AzureStaticWebApp@0
   inputs:
     app_location: '/test/my-app/dist/my-app/'
+    app_build_command: npm run build
     output_location: 'dist/my-app/'
     azure_static_web_apps_api_token: $(token)
     deployment_environment: 'developpement'
