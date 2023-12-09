@@ -24,9 +24,10 @@ steps:
     cd my-app
     npm install -g @angular/cli
     npm install
+    npm ci
     echo "Current directory contents:"
     ls -al
-    ng build
+    npm run build
     echo "Directory contents after ng build:"
     ls -al dist/my-app
   displayName: 'npm install and build'
@@ -38,7 +39,7 @@ steps:
   
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: './dist'
+    app_location: 'dist'
     app_build_command: npm run build
     cwd: '$(System.DefaultWorkingDirectory)/my-app'
     azure_static_web_apps_api_token: $(token)
