@@ -33,5 +33,3 @@ steps:
     app_location: '/my-app/dist/my-app/browser'
     output_location: 'dist/my-app'
   displayName: 'Deploy to Azure Static Web Apps'
-- task: AzureStaticWebApp@0
-  inputs:
