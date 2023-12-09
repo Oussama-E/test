@@ -30,7 +30,6 @@ steps:
   inputs:
     app_location: '/'
     app_build_command: npm run build
-    output_location: 'dist/my-app'
     cwd: '$(System.DefaultWorkingDirectory)/my-app'
     azure_static_web_apps_api_token: $(token)
     deployment_environment: 'developpement'
