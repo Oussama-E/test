@@ -25,11 +25,11 @@ steps:
     echo "Directory contents after ng build:"
     ls -al
   displayName: 'npm install and build'
-
+  
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: '/dist/my-app/'
-    output_location: 'dist/my-app'
-    deployment_environment: 'developpement'
-  env:
+    app_location: '/my-app/dist/my-app/browser'
+    output_location: 'dist/my-app/browser'
     azure_static_web_apps_api_token: $(token)
+    deployment_environment: 'developpement'
+
