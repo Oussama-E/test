@@ -29,14 +29,16 @@ steps:
     cd $(System.DefaultWorkingDirectory)/my-app
     npm install -g @angular/cli
     npm install
-    npm run build 
+    echo "Current directory contents:"
+    ls -al
+    ng build
+    echo "Directory contents after ng build:"
+    ls -al
   displayName: 'npm install and build'
 
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: '/dist/my-app/browser'
+    app_location: '/my-app/dist/my-app/browser'
     output_location: 'dist/my-app'
-    azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN)
-    repo_token: $(GITHUB_TOKEN)
-    action: 'upload'
+    verbose: true  # Ajoutez cette ligne pour obtenir plus de détails sur le déploiement
   displayName: 'Deploy to Azure Static Web Apps'
