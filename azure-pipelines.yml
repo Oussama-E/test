@@ -19,11 +19,9 @@ steps:
     npm install -g @angular/cli
     npm install
     npm run build
-  displayName: 'npm install and build'
-  cwd: $(System.DefaultWorkingDirectory)/my-app
 - task: AzureStaticWebApp@0
   inputs:
     workingDirectory: '$(System.DefaultWorkingDirectory)/my-app'
     app_location: '/my-app/dist/my-app/browser'
     output_location: 'dist/my-app'
-  displayName: 'npm install and build'
+displayName: 'npm install and build'
