@@ -44,5 +44,5 @@ steps:
     azure_static_web_apps_api_token: $(token)
     deployment_environment: 'developpement'
     platform: 'node'
-    runtime_version: '14.x'
+    runtime_version: '18.x'
 
