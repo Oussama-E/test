@@ -3,6 +3,11 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+# Node.js with Angular
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
 trigger:
 - main
 
@@ -25,15 +30,14 @@ steps:
     echo "Directory contents after ng build:"
     ls -al dist/my-app
   displayName: 'npm install and build'
-
-- script: |
-    echo "Contenu du répertoire de travail :"
-    ls -R $(System.DefaultWorkingDirectory)
-  displayName: 'Afficher le contenu du répertoire de travail'
   
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: '/src'
+    app_location: '/'
     app_build_command: npm run build
     cwd: '$(System.DefaultWorkingDirectory)/my-app'
     azure_static_web_apps_api_token: $(token)
+    deployment_environment: 'developpement'
+    platform: 'node'
+    runtime_version: '14.x'
+
