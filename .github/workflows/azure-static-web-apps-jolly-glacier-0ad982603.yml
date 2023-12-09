@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm install
         working-directory: ./my-app  # Set the working directory to the location of package.json
+      - name: Build
+        run: npm run build 
+        working-directory: ./my-app
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -33,6 +36,6 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_GLACIER_0AD982603 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/my-app"
+          app_location: "/my-app/dist/my-app/browser"
           api_location: ""
           output_location: "dist/my-app"
