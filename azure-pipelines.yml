@@ -28,11 +28,8 @@ steps:
 
 - task: AzureStaticWebApp@0
   inputs:
-    workingDirectory: '$(System.DefaultWorkingDirectory)/my-app'
     app_location: '/my-app/dist/my-app/browser'
-    app_build_command: 'ng build'
     output_location: 'dist/my-app'
     azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_GLACIER_0AD982603 }}
   displayName: 'Deploy to Azure Static Web Apps'
-
 
