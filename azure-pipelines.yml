@@ -15,8 +15,8 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  AZURE_STATIC_WEB_APPS_API_TOKEN: "token_azure"
-  GITHUB_REPO_TOKEN: "token_github"
+  AZURE_STATIC_WEB_APPS_API_TOKEN: "votre_token_azure"
+  GITHUB_REPO_TOKEN: $(GITHUB_TOKEN)
 
 steps:
 - task: NodeTool@0
@@ -43,3 +43,4 @@ steps:
     repo_token: $(GITHUB_REPO_TOKEN)
     action: 'upload'
   displayName: 'Deploy to Azure Static Web Apps'
+
