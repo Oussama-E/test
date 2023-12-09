@@ -23,14 +23,13 @@ steps:
     ls -al
     ng build
     echo "Directory contents after ng build:"
-    ls -al
+    ls -al dist/my-app/browser
   displayName: 'npm install and build'
   
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: 'dist/my-app/server'
+    app_location: 'dist/my-app'
     app_build_command: npm run build
-    output_location: 'public'
     cwd: '$(System.DefaultWorkingDirectory)/my-app'
     azure_static_web_apps_api_token: $(token)
     deployment_environment: 'developpement'
