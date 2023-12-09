@@ -16,7 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd my-app
+    cd test/my-app
     npm install -g @angular/cli
     npm install
     echo "Current directory contents:"
@@ -28,8 +28,7 @@ steps:
   
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: '/dist/my-app/browser'
+    app_location: '/test/my-app/dist/my-app/browser'
     output_location: 'dist/my-app/browser'
     azure_static_web_apps_api_token: $(token)
     deployment_environment: 'developpement'
-
