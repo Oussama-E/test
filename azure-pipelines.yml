@@ -16,13 +16,13 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd /my-app/dist/my-app/browser
+    cd my-app/dist/my-app/
     npm install -g @angular/cli
     npm install
     npm run build
   displayName: 'npm install and build'
 - task: AzureStaticWebApp@0
   inputs:
-    workingDirectory: '$(System.DefaultWorkingDirectory)/my-app'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/my-app/dist/my-app'
     app_location: '/my-app/dist/my-app/browser'
     output_location: 'dist/my-app'
